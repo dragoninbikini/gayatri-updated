@@ -1,0 +1,19 @@
+.filter-bar {
+    width: 110rem;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  color: #111;
+  margin: 50px;
+
+  select {
+    padding: 8px 12px;
+    background:white;
+    color: #111;
+    border: 1px solid #444;
+    border-radius: 6px;
+    height: 2rem;
+  }
+}

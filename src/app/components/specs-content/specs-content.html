@@ -1,0 +1,103 @@
+<app-home></app-home>
+<div class="scroll-container">
+  <p>Scroll Down <br>👇</p>
+  <div class="specs_cards">
+    <div class="card1"><img height="240px"  src="assets/fullframe(1).webp"   alt="">
+      <div class="text"><h1>FULLFRAMES</h1>
+        <p>800/-</p>
+      </div>
+    </div>
+    <div class="card2" ><img height="200px"  src="assets/sunglasses.avif"   alt="">
+      <div class="text"><h1>SUNGLASSES</h1>
+        <p>1999/-</p>
+      </div>
+    </div>
+    <div class="card3"><img height="200px"  src="assets/rimless.avif"   alt="">
+      <div class="text"><h1>RIMLESS</h1>
+        <p>755/-</p>
+      </div>
+    </div>
+    <div class="card4"><img height="200px"  src="assets/rimless.avif"   alt="">
+      <div class="text"><h1>RIMLESS</h1>
+        <p>999/-</p>
+      </div>
+    </div>
+    <div class="card5"><img height="200px"  src="assets/rimless.avif"   alt="">
+      <div class="text"><h1>RIMLESS</h1>
+        <p>1700/-</p>
+      </div>
+    </div>
+    <div class="card5"><img height="200px"  src="assets/rimless.avif"   alt="">
+      <div class="text"><h1>RIMLESS</h1>
+        <p>1700/-</p>
+      </div>
+    </div>
+    <div class="card5"><img height="200px"  src="assets/rimless.avif"   alt="">
+      <div class="text"><h1>RIMLESS</h1>
+        <p>1700/-</p>
+      </div>
+    </div>
+    <div class="card5"><img height="200px"  src="assets/rimless.avif"   alt="">
+      <div class="text"><h1>RIMLESS</h1>
+        <p>1700/-</p>
+      </div>
+    </div>
+    <div class="card5"><img height="200px"  src="assets/rimless.avif"   alt="">
+      <div class="text"><h1>RIMLESS</h1>
+        <p>1700/-</p>
+      </div>
+    </div>
+   
+      
+</div>
+</div>
+
+<div class="trending-wrapper">
+  <h2>WEAR THE <br /> <strong>TREND</strong></h2>
+  <p class="subtitle">Our hottest collections</p>
+
+  <swiper-container
+    class="trend-carousel"
+    slides-per-view="4"
+    navigation="true"
+    loop="true"
+    space-between="20"
+  >
+    <swiper-slide *ngFor="let item of items">
+      <div class="trend-card">
+        <h3>{{ item.name }}</h3>
+        <a class="explore-link">Explore</a>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <p class="note">Free Lens Replacement at Stores</p>
+</div>
+   <div class="eyetest-banner">
+    <div class="eyetest">
+      <div class="context">
+       <h1>Book a eye test at home</h1>
+       <p>100+ trendy frames to choose from</p>
+       <button [routerLink]="['/spectacles/booking']">Book now</button>
+      </div>
+      <div class="eyetest-img">
+        <img height="300px" width="100%"   src="assets/eye-check.webp" alt="" style="position: relative;">
+      </div>
+      </div>
+      </div>
+      <div class="shopnow-banner">
+
+        <div class="shopnow">
+          <div class="context">
+            <h1>Shop our exclusive collection</h1>
+            <p>Trust me, You will love it!</p>
+            <button [routerLink]="['/spectacles/shop']" >Shop now</button>
+      </div>
+      <div class="eyetest-img">
+        <img height="300px" width="100%"   src="assets/specsCollection.jpg" alt="" style="position: relative;">
+      </div>
+    </div>
+    
+  </div>
+
+

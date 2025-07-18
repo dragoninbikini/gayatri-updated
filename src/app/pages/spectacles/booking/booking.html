@@ -1,0 +1,60 @@
+<app-header></app-header>
+<om-aurora>
+<div class="content">
+        <div class="actions">
+            <button class="login" [routerLink]="['/login']">Login</button>
+      <button class="signup" [routerLink]="['/signup']">Sign-up</button>
+    </div>
+
+    
+    <div class="partition">
+        <button></button>
+        <ul>
+            <li><a [routerLink]="['/home']">Home</a></li>
+            <li><a [routerLink]="['/watches']">Watches</a></li>
+            <li><a [routerLink]="['/spectacles']">Spectacles</a></li>
+            <li><a [routerLink]="['/about']">About</a></li>
+        </ul>
+    </div>
+    <div class="booking-form">
+        <!-- 1. Login / Signup -->
+        
+        
+        <!-- 2. Address -->
+        <div class="address-section">
+            <label>Enter Your Address</label>
+            <textarea rows="3" placeholder="Flat no, Street, Landmark..."></textarea>
+        </div>
+        
+        <!-- 3. Date & Time Selection -->
+        <div class="datetime-section">
+            <label>Choose Appointment Date & Time</label>
+            <input type="date" />
+            <input type="time" />
+        </div>
+        
+        <!-- 4. Mobile Number + WhatsApp -->
+        <div class="mobile-section">
+            <label>Enter Mobile Number</label>
+            <div class="phone-input">
+                <select>
+                    <option value="+91">IN (+91)</option>
+                </select>
+                <input type="tel" placeholder="8834678909" maxlength="10" />
+            </div>
+            <label class="whatsapp">
+                <input type="checkbox" />
+                Send me text updates on WhatsApp
+            </label>
+        </div>
+        
+        <!-- 5. Proceed -->
+        <div class="proceed-section">
+            <button class="proceed-btn">Proceed</button>
+        </div>
+    </div>
+    </div>
+ 
+
+
+</om-aurora>

@@ -1,0 +1,83 @@
+<app-header></app-header>
+
+<om-aurora>
+  <div class="content">
+    <div class="actions">
+      <button class="login" [routerLink]="['/login']">Login</button>
+      <button class="signup" [routerLink]="['/signup']">Sign-up</button>
+    </div>
+    
+    <div class="partition">
+      <button></button>
+      <ul>
+        <li><a [routerLink]="['/home']">Home</a></li>
+        <li><a [routerLink]="['/watches']">Watches</a></li>
+        <li><a [routerLink]="['/spectacles']">Spectacles</a></li>
+        <li><a [routerLink]="['/about']">About</a></li>
+      </ul>
+    </div>
+   
+    
+
+    
+    <app-about-image *ngIf="isAboutPage"></app-about-image>
+    
+    <app-carousel *ngIf="isHomePage"></app-carousel>
+  </div>
+    <!-- <div class="carousel-wrapper">
+    </div> -->
+    
+  <div class="watch_cards" *ngIf="isHomePage">
+    <div class="title">
+      <h4>// Watches </h4>
+    </div>
+  
+      <div class="analog" [routerLink]="['/watches']" >
+        <img width="" height="200px"  src="assets/analog_watch.webp" alt="">
+        <div class="text">
+          <h1>ANALOG</h1>
+          <p>got taste for some classics?</p>
+        </div>
+      </div>
+      <div class="digital" [routerLink]="['/watches']" ><img width="" height="200px"  src="assets/digital_watch.avif" alt="">
+        <div class="text"><h1>DIGITAL</h1>
+          <p>sporty fella, huh?</p>
+        </div>
+      </div>
+      <div class="smart" [routerLink]="['/watches']" ><img width="" height="200px"  src="assets/smart_watch.webp" alt="">
+        <div class="text"><h1>SMART</h1>
+          <p>Everywear fashion? 
+            (shh! my personal favourite 🤫)</p>
+          </div>
+        </div>
+        
+        <a href="/watches">For More -> </a>
+      </div>
+
+      <div class="specs_cards" *ngIf="isHomePage">
+        <div class="title">
+          <h4>// Spectacles </h4>
+        </div>
+        <div class="analog" [routerLink]="['/spectacles']"><img height="120px"  src="assets/fullframe(1).webp"   alt="">
+          <div class="text"><h1>FULLFRAMES</h1>
+            <p>Looking for some casual look? 
+              I got you!</p>
+            </div>
+          </div>
+          <div class="digital" [routerLink]="['/spectacles']"><img height="100px"  src="assets/sunglasses.avif"   alt="">
+            <div class="text"><h1>SUNGLASSES</h1>
+              <p>Cool dude, huh?
+                (Just like my grandfather!)</p>
+              </div>
+            </div>
+       <div class="smart" [routerLink]="['/spectacles']"><img height="100px"  src="assets/rimless.avif"   alt="">
+      <div class="text"><h1>RIMLESS</h1>
+      <p>Aah! here comes the excecutives </p>
+    </div>
+  </div>
+  
+  <a href="/spectacles">For More -> </a>
+</div>
+
+
+</om-aurora>

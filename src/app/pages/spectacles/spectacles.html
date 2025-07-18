@@ -1,0 +1,25 @@
+<app-header style="position:fixed;"></app-header>
+
+<om-aurora>
+        <div class="content">
+        <div class="actions">
+            <button class="login" [routerLink]="['/login']">Login</button>
+      <button class="signup" [routerLink]="['/signup']">Sign-up</button>
+    </div>
+
+    
+    <div class="partition">
+        <button></button>
+        <ul>
+            <li><a [routerLink]="['/home']">Home</a></li>
+            <li><a [routerLink]="['/watches']">Watches</a></li>
+            <li><a [routerLink]="['/spectacles']">Spectacles</a></li>
+            <li><a [routerLink]="['/about']">About</a></li>
+        </ul>
+    </div>
+    <div class="specscontent-wrapper">
+        <app-specs-content *ngIf="isSpecsPage"></app-specs-content>
+    </div>
+   
+</div>
+</om-aurora>

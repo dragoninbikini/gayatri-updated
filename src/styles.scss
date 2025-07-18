@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/swiper/swiper-bundle.min.css';
+@import '../node_modules/swiper/swiper-bundle.min.css'; // ✅ absolute path
+// @import "tailwindcss";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    width: 100vw;
+    overflow-y: auto;
+    // background-color: #1e1e1e;
+    // scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'LoveStory';
+    src: url(./assets/LoveStory.ttf);
+    font-weight: normal;
+    font-style: normal;
+}

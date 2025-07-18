@@ -1,0 +1,111 @@
+/* watch-buy-page.component.scss */
+.buy-page {
+    height: 100%;
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #0f0f0f;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .watch-image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 20px;
+
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .watch-info-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 200px;
+
+    .watch-title {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .watch-description {
+      font-size: 2rem;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .watch-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+
+      .watch-price {
+        color: #ffd700;
+      }
+
+      .watch-type {
+        color: #aaa;
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+    
+
+      .buy-now {
+        background: #ffd700;
+        color: #000;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 2rem;
+
+        &:hover {
+          background: black;
+          color: #ffd700;
+        }
+      }
+
+      .add-to-cart {
+        background: transparent;
+        color: #fff;
+        padding: 12px 24px;
+        border: 2px solid #ffd700;
+        border-radius: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 2rem;
+
+        &:hover {
+          background: #ffd700;
+          color: #000;
+        }
+      }
+    }
+  }
+}

@@ -24,13 +24,15 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
             ],
             "styles": [
+              "node_modules/swiper/swiper-bundle.min.css",
               "src/styles.scss"
+     
+            ],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js"
             ]
           },
           "configurations": {
@@ -82,10 +84,7 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -94,5 +93,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b3e8b0ae-76fc-45df-a6f6-317b34eaa7a2"
   }
 }

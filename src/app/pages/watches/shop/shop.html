@@ -1,0 +1,46 @@
+<app-header></app-header>
+<script></script>
+
+<om-aurora>
+  <div class="content">
+    <div class="actions">
+      <button class="login" [routerLink]="['/login']">Login</button>
+      <button class="signup" [routerLink]="['/signup']">Sign-up</button>
+    </div>
+
+    <div class="partition">
+      <button></button>
+      <ul>
+        <li><a [routerLink]="['/home']">Home</a></li>
+        <li><a [routerLink]="['/watches']">Watches</a></li>
+        <li><a [routerLink]="['/spectacles']">Spectacles</a></li>
+        <li><a [routerLink]="['/about']">About</a></li>
+      </ul>
+    </div>
+      <div class="shop-page">
+  <header class="shop-header">
+    <h1>Luxury Collection</h1>
+    <p>Discover fine craftsmanship & timeless elegance.</p>
+  </header>
+<app-filter-bar
+  [brands]="brands"
+  [genders]="genders"
+  [prices]="prices"
+  (filtersChanged)="applyFilters($event)">
+</app-filter-bar>
+
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let item of filteredProducts">
+      <img [src]="item.image" alt="{{ item.name }}" class="card-image" />
+      <div class="card-info">
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.price | currency }}</p>
+        <button class="buy-btn">Buy Now</button>
+        <button class="cart-btn">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <om-aurora>

@@ -1,0 +1,98 @@
+
+<div class="nav-bar">
+  <div
+    *ngFor="let item of menuItems; let i = index"
+    class="nav-item"
+    (mouseenter)="hoveredIndex = i"
+    (click)="setTouch(i)"
+  >
+    {{ item.title }}
+  </div>
+  
+
+  <div
+  class="dropdown"
+  *ngIf="hoveredIndex !== null && menuItems[hoveredIndex]"
+  (mouseenter)="isHoveringDropdown = true"
+  (mouseleave)="isHoveringDropdown = false; clearHover()"
+>
+
+
+<div
+    *ngFor="let sub of menuItems[hoveredIndex].content"
+    class="dropdown-item"
+  >
+    {{ sub }}
+    
+
+
+    <ng-container [ngSwitch]="menuItems[hoveredIndex].title">
+      <ng-container *ngSwitchCase="'Eyeglasses'">
+        <div class="drop-section">
+          <ul style="text-align: left">
+            <li>Pocket-Friendly</li>
+            <li>Mid-Range</li>
+            <li>Branded</li>
+            <li>Show All</li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'Sunglasses'">
+        <div class="drop-section">
+          <ul>
+            <li>Polarized</li>
+            <li>Round</li>
+            <li>Retro</li>
+            <li>View All</li>
+          </ul>
+        </div>
+      </ng-container>
+      
+      <ng-container *ngSwitchCase="'Screen Glasses'">
+        <div class="drop-section">
+          <ul>
+            <li>Pocket-Friendly</li>
+            <li>Mid-Range</li>
+            <li>Branded</li>
+            <li>Show All</li>
+          </ul>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'Kids Glasses'">
+        <div class="drop-section">
+          <ul>
+            <li>Pocket-Friendly</li>
+            <li>Mid-Range</li>
+            <li>Branded</li>
+            <li>Show All</li>
+          </ul>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'Contact Lenses'">
+        <div class="drop-section">
+          <ul>
+            <li>Pocket-Friendly</li>
+            <li>Mid-Range</li>
+            <li>Branded</li>
+            <li>Show All</li>
+          </ul>
+        </div>
+      </ng-container>
+      
+      <ng-container *ngSwitchCase="'Store Locator'">
+        <div class="drop-section">
+          <p>📍 Gayatri watch and opticals, Khokhra, Ahmedabad</p>
+        </div>
+      </ng-container>
+      
+      <ng-container *ngSwitchDefault>
+        <div class="drop-section">
+          <p>No content available</p>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+</div>
+

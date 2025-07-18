@@ -1,0 +1,329 @@
+:host {
+  display: block;
+  
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  // height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: #1e1e1e;
+}
+
+  .actions {
+    position: absolute;
+  top: 20px;
+  left: 55%;
+  gap: 10px;
+  // transform: translateX(-50%);
+  width: 70%;
+  text-align: center;
+  }
+.login {
+  font-family: monospace;
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  background-image: linear-gradient(to right, #1e1e1e, #1e1e1e);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.login::after {
+  content: "";
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  height: 2px;
+  background-color: #fff;
+  width: 0;
+  transition: width 0.4s ease;
+}
+
+/* On hover: text color + fill + underline */
+.login:hover {
+  color: #fff;
+  background-size: 100% 100%;
+}
+
+.login:hover::after {
+  width: 100%;
+}
+
+.login {
+  color: #1e1e1e;
+  background-color: white;
+  height: 45px;
+  width: 100px;
+  border-radius: 55px;
+  border: 0;
+  box-shadow: #fff;
+  font-family: monospace;
+  transition: 0.2s;
+}
+
+// .login:hover {
+//     color: #fff;
+//     background-color: black;
+//     text-decoration: underline;
+//     transition: 0.6s ease;
+// }
+.carousel-wrapper {
+  margin-bottom: 900px;
+}
+.signup {
+  font-family: monospace;
+  color: white;
+  background-color: black;
+  height: 45px;
+  left: 10px;
+  border-radius: 55px;
+  border: 0;
+  box-shadow: #fff;
+}
+
+.signup {
+  width: 125px;
+  font-family: monospace;
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: black;
+  border: none;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  background-image: linear-gradient(to right, #fff, #fff);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.signup::after {
+  content: "";
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  height: 2px;
+  background-color: black;
+  width: 0;
+  transition: width 0.4s ease;
+}
+
+/* On hover: text color + fill + underline */
+.signup:hover {
+  color: black;
+  background-size: 100% 100%;
+}
+
+.signup:hover::after {
+  width: 100%;
+}
+
+.content {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Viewport height */
+  z-index: 10; /* Ensure it sits above */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* prevent internal scroll */
+}
+      h1 {
+        font-size: 6rem;
+        font-weight: bold;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: linear-gradient(
+          to bottom,
+          #fff 0,
+          rgba(255, 255, 255, 0.1) 95%
+        );
+      }
+    
+
+.partition {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  text-align: center;
+   margin-top: 80px; //← Not needed with absolute top 
+   
+}
+
+.partition button {
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 2px;          /* Thin button */
+  font-size: 14px;
+  padding: 0 1rem;       /* Horizontal padding only */
+  border: none;
+  border-radius: 200px;
+  transition: 0.3s ease-in;
+}
+
+.partition ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* space between links */
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  gap: 300px;
+}
+
+.partition ul li a {
+  text-decoration: none;
+  color: #1e1e1e;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.partition ul li a:hover {
+  color: gray;
+  transition: 0.2s ease;
+}
+
+
+  .watch_cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 71px;
+  // margin-bottom: 240px;
+  
+}
+.watch_cards a {
+   text-decoration: none;
+   color: gray;
+   cursor: pointer;
+}
+
+.title {
+  margin-bottom: 400px;
+  
+}
+.title h4 {
+  font-size: 25px;
+}
+
+.analog,
+.digital,
+.smart {
+  
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 400px;
+  height: 190px;
+  border-radius: 20px;
+  background: rgba(200, 200, 200, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-origin: bottom left; /* 👈 sets pop-up direction */
+
+  font-family: monospace;
+  overflow: hidden;
+    will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.analog:hover,
+.digital:hover,
+.smart:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px) brightness(1.05);
+}
+
+// .analog img,
+// .digital img,
+// .smart img {
+//   height: 100%;
+//   border-radius: 12px;
+// }
+
+.analog .text,
+.digital .text,
+.smart .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // background-color: #1e1e1e;
+}
+
+.analog h1,
+.digital  h1,
+.smart  h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #1e1e1e;
+}
+
+.analog .text p,
+.digital .text p,
+.smart .text p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #1e1e1e;
+}
+
+.specs_cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 71px;
+  // margin-bottom: 240px;
+  margin-top: 0
+}
+
+.specs_cards a {
+  text-decoration: none;
+  cursor: pointer;
+  color: gray;
+}
+.main-wrapper {
+  margin-top: 500px;
+  min-height: 100vh;
+  overflow-y: auto;
+  width: 100%;
+  align-items: center;
+  margin-left: 600px;
+}
+
+.carousel-wrapper {
+  margin-top: 1000px;
+}
+
+.spectacles {
+  height: 100vh;
+  display: grid;
+  overflow-y: scroll;
+}

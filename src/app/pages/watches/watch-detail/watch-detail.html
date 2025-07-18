@@ -1,0 +1,22 @@
+<div class="buy-page">
+  <div class="watch-image-section">
+    <app-watch-gallery [images]="item.images"></app-watch-gallery>
+  </div>
+
+  <div class="watch-info-section">
+    <h1 class="watch-title">{{ item.name }}</h1>
+    <p class="watch-description">{{ item.description }}</p>
+
+    <div class="watch-meta">
+      <p class="watch-price">₹{{ item.price }}</p>
+      <p class="watch-type">{{ item.type }}</p>
+    </div>
+
+    <div class="actions">
+      <button class="buy-now">Buy Now</button>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+  

@@ -1,0 +1,16 @@
+<app-header></app-header>
+<om-aurora>
+    <div class="login-container">
+  <form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>// Login</h2>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" required />
+
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" required />
+
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+</div>
+</om-aurora>
