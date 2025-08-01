@@ -1,0 +1,13 @@
+<ng-container *ngIf="isLoggedIn()">
+  <div class="user-menu" (click)="toggleDropdown()">
+    <img src="./assets/user-icon.png" alt="User" class="user-icon" />
+    <div class="dropdown" [class.active]="dropdownOpen">
+      <a routerLink="/user/orders">My Orders</a>
+      <a routerLink="/user/account">Account Info</a>
+      <a routerLink="/user/wishlist">Wishlist</a>
+      <a routerLink="/user/payment">Payment Methods</a>
+      <a routerLink="/user/settings">Privacy & Security</a>
+      <a (click)="logout()">Logout</a>
+    </div>
+  </div>
+</ng-container>

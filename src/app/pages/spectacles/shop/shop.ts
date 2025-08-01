@@ -4,33 +4,31 @@ import { NgxAuroraComponent } from '@omnedia/ngx-aurora';
 import { FilterBar } from './filter-bar/filter-bar';
 import { CommonModule } from '@angular/common';
 import { Header } from '../../../components/header/header';
-
+import { User } from "../../user/user";
+import { CartService, CartItem } from '../../../shared/cart-service';
 @Component({
   selector: 'app-shop',
-  imports: [RouterLink, NgxAuroraComponent, FilterBar, CommonModule, Header],
+  imports: [RouterLink, NgxAuroraComponent, FilterBar, CommonModule, Header, User],
   templateUrl: './shop.html',
   styleUrl: './shop.scss'
 })
 export class Shop {
     products = [
-    { name: "Fastrack", image: 'assets/fastrack.webp', price: 2000, brand: 'Fastrack', gender: 'male' },
-    { name: "Fastrack", image: 'assets/fastrack.webp', price: 2000, brand: 'Fastrack', gender: 'male' },
-    { name: "Fastrack", image: 'assets/fastrack.webp', price: 2000, brand: 'Fastrack', gender: 'male' },
-    { name: "RayBon", image: 'assets/rayBan.avif', price: 2500, brand: 'RayBon', gender: 'male' },
-    { name: "RayBon", image: 'assets/rayBan.avif', price: 2500, brand: 'RayBon', gender: 'male' },
-    { name: "RayBon", image: 'assets/rayBan.avif', price: 2500, brand: 'RayBon', gender: 'male' },
-    { name: "IDEE", image: 'assets/IDEE.png', price: 1800, brand: 'IDEE', gender: 'female' },
-    { name: "IDEE", image: 'assets/IDEE.png', price: 1800, brand: 'IDEE', gender: 'female' },
-    { name: "IDEE", image: 'assets/IDEE.png', price: 1800, brand: 'IDEE', gender: 'female' },
-    { name: "MayBack", image: 'assets/Maybach.jpg', price: 3000, brand: 'MayBack', gender: 'unisex' },
-    { name: "MayBack", image: 'assets/Maybach.jpg', price: 3000, brand: 'MayBack', gender: 'unisex' },
-    { name: "MayBack", image: 'assets/Maybach.jpg', price: 3000, brand: 'MayBack', gender: 'unisex' },
-    { name: "Burberry", image: 'assets/Burberry.avif', price: 3500, brand: 'Burberry', gender: 'female' },
-    { name: "Burberry", image: 'assets/Burberry.avif', price: 3500, brand: 'Burberry', gender: 'female' },
-    { name: "Burberry", image: 'assets/Burberry.avif', price: 3500, brand: 'Burberry', gender: 'female' },
-    { name: "John Jacobs", image: 'assets/Johnjacobs.avif', price: 4000, brand: 'John Jacobs', gender: 'male' },
-    { name: "John Jacobs", image: 'assets/Johnjacobs.avif', price: 4000, brand: 'John Jacobs', gender: 'male' },
-    { name: "John Jacobs", image: 'assets/Johnjacobs.avif', price: 4000, brand: 'John Jacobs', gender: 'male' },
+    { id: 1,name: "Fastrack", image: 'assets/fastrack.webp', price: 2000, brand: 'Fastrack', gender: 'male' },
+    { id: 2,name: "Fastrack", image: 'assets/fastrack.webp', price: 2000, brand: 'Fastrack', gender: 'male' },
+    { id: 3,name: "Fastrack", image: 'assets/fastrack.webp', price: 2000, brand: 'Fastrack', gender: 'male' },
+    { id: 4,name: "RayBon", image: 'assets/rayBan.avif', price: 2500, brand: 'RayBon', gender: 'male' },
+    { id: 5,name: "RayBon", image: 'assets/rayBan.avif', price: 2500, brand: 'RayBon', gender: 'male' },
+    { id: 6,name: "RayBon", image: 'assets/rayBan.avif', price: 2500, brand: 'RayBon', gender: 'male' },
+    { id: 7,name: "IDEE", image: 'assets/IDEE.png', price: 1800, brand: 'IDEE', gender: 'female' },
+    { id: 8,name: "IDEE", image: 'assets/IDEE.png', price: 1800, brand: 'IDEE', gender: 'female' },
+    { id: 9,name: "IDEE", image: 'assets/IDEE.png', price: 1800, brand: 'IDEE', gender: 'female' },
+    { id: 13,name: "Burberry", image: 'assets/Burberry.avif', price: 3500, brand: 'Burberry', gender: 'female' },
+    { id: 14,name: "Burberry", image: 'assets/Burberry.avif', price: 3500, brand: 'Burberry', gender: 'female' },
+    { id: 15,name: "Burberry", image: 'assets/Burberry.avif', price: 3500, brand: 'Burberry', gender: 'female' },
+    { id: 16,name: "John Jacobs", image: 'assets/Johnjacobs.avif', price: 4000, brand: 'John Jacobs', gender: 'male' },
+    { id: 17,name: "John Jacobs", image: 'assets/Johnjacobs.avif', price: 4000, brand: 'John Jacobs', gender: 'male' },
+    { id: 18,name: "John Jacobs", image: 'assets/Johnjacobs.avif', price: 4000, brand: 'John Jacobs', gender: 'male' },
   ];
 
   filteredProducts = [...this.products];
@@ -69,4 +67,18 @@ export class Shop {
 
     this.filteredProducts = filtered;
   }
+  isLoggedIn(): boolean {
+  return !!localStorage.getItem('accessToken');
+}
+constructor(private cartService: CartService) {}
+addToCart(product: any) {
+  const item: CartItem = {
+    id: product.id,
+    image: product.image,
+    name: product.name,
+    price: product.price,
+    quantity: 1
+  };
+  this.cartService.addToCart(item);
+}
 }

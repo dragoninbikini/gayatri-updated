@@ -3,6 +3,8 @@
    <div class="login-container">
   <form class="login" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <h2>// Sign Up</h2>
+    <label for="number">number</label>
+    <input id="number" type="number" formControlName="number" required />
 
     <label for="username">Username</label>
     <input id="username" type="text" formControlName="username" required />

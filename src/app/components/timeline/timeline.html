@@ -1,0 +1,14 @@
+<div class="timeline">
+  <div
+    *ngFor="let entry of data; let i = index"
+    class="timeline-entry"
+    [class.left]="orientation === 'left' || (orientation === 'switch' && i % 2 === 0)"
+    [class.right]="orientation === 'right' || (orientation === 'switch' && i % 2 !== 0)"
+  >
+    <div class="content">
+      <h3>{{ entry.title }}</h3>
+      <p>{{ entry.content }}</p>
+    </div>
+  </div>
+</div>
+

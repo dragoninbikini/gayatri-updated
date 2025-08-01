@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="side-nav">
+    <!-- Side nav content -->
+    <h2 style="font-family: 'Courier New', Courier, monospace; font-weight: 100; font-size: 20px;" >Welcome Admin! 👋</h2>
+    <!-- Nav links could go here -->
+     <nav>
+      <ul>
+        <li><a [routerLink]="['/admin/']">Dashboard</a></li>
+        <li><a [routerLink]="['/admin/manage']">manage</a></li>
+      </ul>
+     </nav>
+  </div>
+
+  <div class="right-nav">
+ <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,28 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { Header } from '../../components/header/header';
-import { NgxAuroraComponent } from '@omnedia/ngx-aurora';
-import { RouterLink } from '@angular/router';
-import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { Carousel } from "../../components/carousel/carousel";
+import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
-import { NavigationEnd } from '@angular/router';
-import { AboutImage } from "../../components/about-image/about-image";
-import { SpecsContent } from '../../components/specs-content/specs-content';
+import { Services } from '../../authservice/services';
+import { CommonModule } from '@angular/common';
+import { Header } from '../../components/header/header';
+import { RouterLink } from '@angular/router';
+import { Carousel } from '../../components/carousel/carousel';
+import { AboutImage } from '../../components/about-image/about-image';
+import { User } from "../user/user";
 
 @Component({
+  standalone: true,
   selector: 'app-home',
-  imports: [Header, NgxAuroraComponent, RouterLink, CommonModule, Carousel, AboutImage,],
   templateUrl: './home.html',
-  styleUrl: './home.scss'
+  styleUrls: ['./home.scss'],
+    imports: [
+      CommonModule,
+      Header,
+      RouterLink,
+      Carousel,
+      AboutImage,
+      User
+  ]
 })
-export class Home {
+export class Home implements OnInit {
   isHomePage = false;
   isAboutPage = false;
   isSpecsPage = false;
   isWatchPage = false;
+  isLoggedIn = false;
+  menuOpen = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private services: Services) {
+   
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
@@ -31,12 +41,19 @@ export class Home {
         this.isWatchPage = event.urlAfterRedirects === '/watches';
         this.isSpecsPage = event.urlAfterRedirects === '/spectacles';
       });
-     
   }
-  menuOpen = false;
 
+  ngOnInit(): void {
+    this.services.isLoggedIn$.subscribe(status => {
+      this.isLoggedIn = status;
+    });
+  }
 
-toggleMenu() {
-  this.menuOpen = !this.menuOpen;
-}
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  logout() {
+    this.services.logout();
+  }
 }

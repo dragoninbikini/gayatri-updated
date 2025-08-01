@@ -1,6 +1,8 @@
+
 :host {
   display: block;
-  
+      background-color: #243340;
+    color: #41B0AD;
 }
 
 html, body {
@@ -8,9 +10,10 @@ html, body {
   padding: 0;
   // height: 100%;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior:auto;
   background: #1e1e1e;
 }
+
 
 .actions {
     position: absolute;
@@ -106,7 +109,7 @@ html, body {
         background-image: linear-gradient(to right, #fff, #fff);
         background-size: 0% 100%;
         background-repeat: no-repeat;
-  background-position: left bottom;
+        background-position: left bottom;
 }
 
 .signup::after {
@@ -143,6 +146,7 @@ html, body {
   justify-content: center;
   align-items: center;
 //   overflow: hidden; /* prevent internal scroll */
+
 }
       h1 {
         font-size: 6rem;
@@ -170,7 +174,7 @@ html, body {
 }
 
 .partition button {
-  background-color: black;
+ 
   color: white;
   width: 100%;
   height: 2px;          /* Thin button */
@@ -193,7 +197,7 @@ html, body {
 
 .partition ul li a {
   text-decoration: none;
-  color: #1e1e1e;
+    color: #41B0AD;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -220,27 +224,30 @@ html, body {
   h1 {
     font-size: 2.8rem;
     font-weight: 300;
-    color: #1e1e1e;
+    color: #ffffff;
   }
 
   p {
     font-size: 1.2rem;
     opacity: 0.8;
-    color: #1e1e1e;
+    color: #ffffff;
   }
 }
 
 .product-grid {
+  padding: 20px;
     margin-left: 180px;
   display: flex;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 4rem;
+  border-left-style: dashed;
+  border-color: gray;
 }
 
 .product-card {
   
-  background-color: #1f1f1f;
+  background-color: rgba(2,200,200,0.2);
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -262,19 +269,21 @@ html, body {
   padding: 1rem;
 
   h2 {
-    font-size: 1.4rem;
+    color: #fff;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 400;
   }
 
   p {
+    color: #41B0AD;
     font-size: 1rem;
     margin-bottom: 1rem;
   }
 
   .buy-btn {
     background-color: #B3210E; /* accent red from palette */
-    color: white;
+    color: #B3210E;
     padding: 0.6rem 1.2rem;
     border: none;
     font-size: 1rem;

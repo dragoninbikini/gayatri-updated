@@ -1,16 +1,25 @@
 <div class="filter-bar">
-  <select [(ngModel)]="selectedBrand" (change)="updateFilters()">
-    <option value="">All Brands</option>
-    <option *ngFor="let brand of brands" [value]="brand">{{ brand }}</option>
-  </select>
+  <label>
+    Brand:
+    <select [(ngModel)]="selectedBrand" (change)="updateFilters()">
+      <option value="">All</option>
+      <option *ngFor="let brand of brands" [value]="brand">{{ brand }}</option>
+    </select>
+  </label>
 
-  <select [(ngModel)]="selectedGender" (change)="updateFilters()">
-    <option value="">All Genders</option>
-    <option *ngFor="let gender of genders" [value]="gender">{{ gender }}</option>
-  </select>
+  <label>
+    Gender:
+    <select [(ngModel)]="selectedGender" (change)="updateFilters()">
+      <option value="">All</option>
+      <option *ngFor="let gender of genders" [value]="gender">{{ gender }}</option>
+    </select>
+  </label>
 
-  <select [(ngModel)]="selectedPrice" (change)="updateFilters()">
-    <option value="">All Prices</option>
-    <option *ngFor="let price of prices" [value]="price">{{ price }}</option>
-  </select>
+  <label>
+    Price:
+    <select [(ngModel)]="selectedPrice" (change)="updateFilters()">
+      <option value="">All</option>
+      <option *ngFor="let price of prices" [value]="price">{{ price }}</option>
+    </select>
+  </label>
 </div>

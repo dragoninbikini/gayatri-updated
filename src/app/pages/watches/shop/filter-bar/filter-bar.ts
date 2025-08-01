@@ -1,25 +1,41 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-filter-bar',
-  imports: [ FormsModule, CommonModule ],
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   templateUrl: './filter-bar.html',
-  styleUrl: './filter-bar.scss'
+  styleUrl: './filter-bar.scss',
 })
-export class FilterBar {
-
-
-    @Output() filtersChanged = new EventEmitter<any>();
+export class FilterBar implements OnInit {
+  @Output() filtersChanged = new EventEmitter<any>();
+  @Input() brands: string[] = [];
+  @Input() genders: string[] = [];
+  @Input() prices: string[] = [];
 
   selectedBrand = '';
   selectedGender = '';
   selectedPrice = '';
 
-  @Input() brands:string[] = ['Rolex', 'Casio', 'Fossil', 'Omega', 'Titan'];
-  @Input() genders:string[] = ['Men', 'Women', 'Unisex'];
-  @Input() prices:string[] = ['<5000', '5000-10000', '>10000'];
+
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.http.get<any>('http://localhost:5296/api/product/filters').subscribe({
+      next: (data) => {
+        this.brands = data.brands;
+        this.genders = data.genders;
+        this.prices = data.prices;
+      },
+      error: (err) => {
+        console.error('Failed to fetch filter options', err);
+      }
+    });
+  }
 
   updateFilters() {
     this.filtersChanged.emit({
@@ -28,5 +44,4 @@ export class FilterBar {
       price: this.selectedPrice,
     });
   }
-  
 }

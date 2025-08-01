@@ -1,27 +1,29 @@
-<app-home></app-home>
-  <div class="timeline-wrapper">
-      <h1>
-        
-        <om-neon-underline></om-neon-underline>
-      </h1>
+<app-header></app-header>
+<om-aurora>
 
-      <om-timeline
-        [data]="timelineData"
-        [entryGap]="'1rem'"
-        [titleMaxWidth]="'15rem'"
-        [orientation]="'switch'"
-      ></om-timeline>
+  <div class="content">
+    <div class="actions">
+      <ng-container *ngIf="!isLoggedIn(); else userIcon">
+        <button class="login" routerLink="/login">Login</button>
+        <button class="signup" routerLink="/signup">Sign-up</button>
+      </ng-container>
+      <ng-template #userIcon>
+        <app-user></app-user>
+      </ng-template>
     </div>
-
-    <div class="timeline-wrapper">
-      <h1>
-       
-        <om-neon-underline></om-neon-underline>
-      </h1>
-
-      <om-timeline
-        [data]="timelineData"
-        [entryGap]="'1rem'"
-        [titleMaxWidth]="'15rem'"
-      ></om-timeline>
+    
+    <div class="partition">
+      <button></button>
+      <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/watches">Watches</a></li>
+        <li><a routerLink="/spectacles">Spectacles</a></li>
+        <li><a routerLink="/about">About</a></li>
+      </ul>
     </div>
+  <app-about-image></app-about-image>
+  <app-timeline [data]="timelineData" orientation="switch" style="margin-top: 100px;"></app-timeline>
+  
+</div>
+
+</om-aurora>

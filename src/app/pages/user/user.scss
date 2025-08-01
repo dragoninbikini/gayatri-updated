@@ -1,0 +1,59 @@
+.user-menu {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  gap: 50px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  // flap animation core
+  transform-origin: top center;
+  transform: scaleY(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  a {
+    padding: 5px 10px;
+    color: #41B0AD;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  a:hover {
+    background: rgba(100, 100, 100, 0.3);
+    border-radius: 15px;
+  }
+
+  &.active {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+}
+
+.user-icon {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(36%) saturate(341%) hue-rotate(128deg) brightness(89%) contrast(95%);
+}

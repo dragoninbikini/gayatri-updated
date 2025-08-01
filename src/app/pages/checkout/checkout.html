@@ -1,0 +1,40 @@
+<div class="checkout-container">
+
+  <div class="summary-section">
+    <h2>Order Summary</h2>
+    <div class="item">
+      <img src="assets/images/product.jpg" alt="Product" />
+      <div class="item-details">
+        <p class="item-name">Elegant Watch</p>
+        <p class="item-qty">Qty: 1</p>
+        <p class="item-price">$199.00</p>
+      </div>
+    </div>
+
+    <div class="summary-totals">
+      <div><span>Subtotal</span><span>$199.00</span></div>
+      <div><span>Shipping</span><span>$5.00</span></div>
+      <div class="total"><span>Total</span><span>$204.00</span></div>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h2>Checkout</h2>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <label>Full Name</label>
+      <input formControlName="name" type="text" placeholder="John Doe" />
+
+      <label>Number</label>
+      <input formControlName="Number" type="" placeholder="1234567890" />
+
+      <label>Email</label>
+      <input formControlName="email" type="email" placeholder="john@example.com" />
+
+      <label>Shipping Address</label>
+      <input formControlName="address" type="text" placeholder="123 Street, City" />
+
+      <button type="submit">Confirm</button>
+    </form>
+  </div>
+</div>
+

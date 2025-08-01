@@ -1,20 +1,19 @@
 import { Routes } from '@angular/router';
+import { Admin } from './admin/admin/admin';
+import { AuthGuard } from './guards/auth-guard';
+import { manage } from './admin/manage/manage';
+import { Dashboard } from './admin/dashboard/dashboard';
 
 export const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    loadComponent: () => {
-      return import('./pages/home/home').then((m) => m.Home);
-    },
-  },
-  {
-    path: 'home',
-    pathMatch: 'full',
-    loadComponent: () => {
-      return import('./pages/home/home').then((m) => m.Home);
-    },
-  },
+{
+  path: 'home',
+  loadComponent: () => import('./pages/home/home').then(m => m.Home)
+},
+{
+  path: '',
+  pathMatch: 'full',
+  redirectTo: 'home'
+},
   {
     path: 'login',
     loadComponent: () => {
@@ -53,19 +52,7 @@ export const routes: Routes = [
       return import('./pages/spectacles/spectacles').then((m) => m.Spectacles);
     },
   },
-    {
-    path: 'watches/shop',
-    loadComponent: () =>
-      import('./pages/watches/shop/shop').then((m) => m.Shop),
-  },
-  
-  {
-    path: 'watches/:id',
-    loadComponent: () =>
-      import('./pages/watches/watch-detail/watch-detail').then(
-        (m) => m.WatchDetail
-      ),
-  },
+
     {
     path: 'spectacles/shop',
     loadComponent: () =>
@@ -90,4 +77,59 @@ export const routes: Routes = [
       return import('./pages/about/about').then((m) => m.About);
     },
   },
+{
+  path: 'admin',
+  canActivate: [AuthGuard],
+  data: { roles: ['Admin'] },
+  loadComponent: () => import("./admin/admin/admin").then((m) => m.Admin),
+  children: [
+    {
+      path: '',
+      component: Dashboard
+    },
+    {
+      path: 'manage',
+      component: manage
+    }
+  ]
+},
+{
+  path: 'user',
+  canActivate: [AuthGuard],
+  children: [
+    {
+      path: 'orders',
+      loadComponent: () =>
+        import('./pages/user/orders/orders').then((m) => m.Orders),
+    },
+    {
+      path: 'account',
+      loadComponent: () =>
+        import('./pages/user/account/account').then((m) => m.Account),
+    },
+    {
+      path: 'wishlist',
+      loadComponent: () =>
+        import('./pages/user/wishlist/wishlist').then((m) => m.Wishlist),
+    },
+    {
+      path: 'payment',
+      loadComponent: () =>
+        import('./pages/user/payment/payment').then((m) => m.Payment),
+    },
+    {
+      path: 'settings',
+      loadComponent: () =>
+        import('./pages/user/settings/settings').then((m) => m.Settings),
+    },
+  ],
+},
+{
+  path: 'checkout',
+  loadComponent: () => {
+    return import('./pages/checkout/checkout').then((m) => m.Checkout)
+  }
+}
+
+
 ];

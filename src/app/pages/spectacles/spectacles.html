@@ -1,11 +1,17 @@
 <app-header style="position:fixed;"></app-header>
 
-<om-aurora>
+
         <div class="content">
-        <div class="actions">
-            <button class="login" [routerLink]="['/login']">Login</button>
-      <button class="signup" [routerLink]="['/signup']">Sign-up</button>
-    </div>
+<div class="actions">
+  <ng-container *ngIf="!isLoggedIn(); else userIcon">
+    <button class="login" routerLink="/login">Login</button>
+    <button class="signup" routerLink="/signup">Sign-up</button>
+  </ng-container>
+
+  <ng-template #userIcon>
+    <app-user></app-user>
+  </ng-template>
+</div>
 
     
     <div class="partition">
@@ -22,4 +28,3 @@
     </div>
    
 </div>
-</om-aurora>

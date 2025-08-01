@@ -1,13 +1,18 @@
 <app-header></app-header>
 <script></script>
 
-<om-aurora>
-  <div class="content">
-    <div class="actions">
-      <button class="login" [routerLink]="['/login']">Login</button>
-      <button class="signup" [routerLink]="['/signup']">Sign-up</button>
-    </div>
 
+  <div class="content">
+<div class="actions">
+  <ng-container *ngIf="!isLoggedIn(); else userIcon">
+    <button class="login" routerLink="/login">Login</button>
+    <button class="signup" routerLink="/signup">Sign-up</button>
+  </ng-container>
+
+  <ng-template #userIcon>
+    <app-user></app-user>
+  </ng-template>
+</div>
     <div class="partition">
       <button></button>
       <ul>
@@ -36,11 +41,11 @@
         <h2>{{ item.name }}</h2>
         <p>{{ item.price | currency }}</p>
         <button class="buy-btn">Buy Now</button>
-        <button class="cart-btn">Add to cart</button>
+        <button class="cart-btn" (click)="addToCart(item)">Add to cart</button>
       </div>
     </div>
   </div>
 </div>
 
     </div>
-    <om-aurora>
+

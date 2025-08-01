@@ -1,66 +1,67 @@
 :host {
   display: block;
-  
+    background-color: #243340;
+    color: #41B0AD;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  // height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
   background: #1e1e1e;
+  font-family: monospace;
 }
 
-.actions {
-    position: absolute;
+  .actions {
+  position: absolute;
   top: 20px;
   left: 55%;
   gap: 10px;
-  // transform: translateX(-50%);
+
   width: 70%;
   text-align: center;
-}
+  }
 .login {
-    font-family: monospace;
-    position: relative;
-    padding: 10px 20px;
-    font-size: 16px;
-    background: none;
-    border: none;
-    color: black;
-    cursor: pointer;
-    overflow: hidden;
-    transition: color 0.3s ease;
-    background-image: linear-gradient(to right, #1e1e1e, #1e1e1e);
-    background-size: 0% 100%;
-    background-repeat: no-repeat;
-    background-position: left bottom;
+  font-family: monospace;
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  background-image: linear-gradient(to right, #1e1e1e, #1e1e1e);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: left bottom;
 }
 
 .login::after {
-    content: "";
-    position: absolute;
-    bottom: 9px;
-    left: 0;
-    height: 2px;
-    background-color: #fff;
+  content: "";
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  height: 2px;
+  background-color: #fff;
   width: 0;
   transition: width 0.4s ease;
 }
 
-/* On hover: text color + fill + underline */
+
 .login:hover {
-    color: #fff;
-    background-size: 100% 100%;
+  color: #fff;
+  background-size: 100% 100%;
 }
 
 .login:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .login {
-    color: #1e1e1e;
+  color: #1e1e1e;
   background-color: white;
   height: 45px;
   width: 100px;
@@ -71,78 +72,72 @@ html, body {
   transition: 0.2s;
 }
 
-// .login:hover {
-    //     color: #fff;
-    //     background-color: black;
-    //     text-decoration: underline;
-    //     transition: 0.6s ease;
-    // }
-    .carousel-wrapper {
-        margin-bottom: 900px;
-    }
-    .signup {
-        font-family: monospace;
-        color: white;
-        background-color: black;
-        height: 45px;
-        left: 10px;
-        border-radius: 55px;
-        border: 0;
-        box-shadow: #fff;
-    }
-    
-    .signup {
-        width: 125px;
-        font-family: monospace;
-        position: relative;
-        padding: 10px 20px;
-        font-size: 16px;
-        background: black;
-        border: none;
-        color: white;
-        cursor: pointer;
-        overflow: hidden;
-        transition: color 0.3s ease;
-        background-image: linear-gradient(to right, #fff, #fff);
-        background-size: 0% 100%;
-        background-repeat: no-repeat;
+
+.carousel-wrapper {
+  margin-bottom: 900px;
+}
+.signup {
+  font-family: monospace;
+  color: white;
+  background-color: black;
+  height: 45px;
+  left: 10px;
+  border-radius: 55px;
+  border: 0;
+  box-shadow: #fff;
+}
+
+.signup {
+  width: 125px;
+  font-family: monospace;
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: black;
+  border: none;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  background-image: linear-gradient(to right, #fff, #fff);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
   background-position: left bottom;
 }
 
 .signup::after {
-    content: "";
-    position: absolute;
-    bottom: 9px;
-    left: 0;
+  content: "";
+  position: absolute;
+  bottom: 9px;
+  left: 0;
   height: 2px;
   background-color: black;
   width: 0;
   transition: width 0.4s ease;
 }
 
-/* On hover: text color + fill + underline */
+
 .signup:hover {
-    color: black;
-    background-size: 100% 100%;
+  color: black;
+  background-size: 100% 100%;
 }
 
 .signup:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .content {
-    position: relative;
-    top: 0;
-    // overflow-y: scroll;
+  position: relative;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Viewport height */
-  z-index: 10; /* Ensure it sits above */
+  height: 100%; 
+  z-index: 10; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-//   overflow: hidden; /* prevent internal scroll */
+  overflow: hidden;
 }
       h1 {
         font-size: 6rem;
@@ -165,17 +160,16 @@ html, body {
   transform: translateX(-50%);
   width: 70%;
   text-align: center;
-   margin-top: 80px; //← Not needed with absolute top 
+   margin-top: 80px; 
    
 }
 
 .partition button {
-  background-color: black;
-  color: white;
+  color: #41B0AD;
   width: 100%;
-  height: 2px;          /* Thin button */
+  height: 2px;      
   font-size: 14px;
-  padding: 0 1rem;       /* Horizontal padding only */
+  padding: 0 1rem;     
   border: none;
   border-radius: 200px;
   transition: 0.3s ease-in;
@@ -184,7 +178,7 @@ html, body {
 .partition ul {
   display: flex;
   justify-content: center;
-  gap: 2rem; /* space between links */
+  gap: 2rem; 
   list-style: none;
   padding: 0;
   margin-top: 1rem;
@@ -193,218 +187,89 @@ html, body {
 
 .partition ul li a {
   text-decoration: none;
-  color: #1e1e1e;
+  color: #41B0AD;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .partition ul li a:hover {
-  color: gray;
+  color: rgba(2, 215, 215, 0.2);
   transition: 0.2s ease;
 }
+
+
 .templates {
-    display: grid;
-    // gap: 500px;
-    margin-top: 100px;
-    width: 100%;
+  display: grid;
+  width: 100%;
+  margin-top: 100px;
 }
+
 .firstContext {
   height: 500px;
   width: 100%;
-  align-items: center;
   text-align: center;
 }
+
 .firstContext h1 {
-  font-family: 'LoveStory';
-  color: #000;
-  text-align: center;
-  margin-top: 10rem;
-}
-.first-template {
-    background-color: #62749A;
-    height: 500px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 15rem;
+  color: #41B0AD;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 40px;
 }
 
-.second-template {
-    background-color: #CF6363;
-    height: 500px;
-    width: 100%;
-    // margin-top: 200px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+.first-template, .second-template, .third-template, .fourth-template, .fifth-template, .sixth-template, .eight-template {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-
-.third-template {
-    background-color: #8968AD;
-    height: 500px;
-    width: 100%;
-    // margin-top: 200px;
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.fourth-template {
-    background-color: #A4BD48;
-    height: 500px;
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    // margin-top: 200px;
-    justify-content: space-between;
-
-}
-
-.fifth-template {
-    background-color: #D97543;
-    height: 500px;
-    width: 100%;
-    display: flex;
-    // margin-top: 200px;
-    justify-content: space-between;
-}
-
-.sixth-template {
-    background-color: #1887A2;
-    height: 500px;
-    width: 100%;
-     display: flex;
-    flex-direction: row-reverse;
-    // margin-top: 200px;
-    justify-content: space-between;
-}
-
-.eight-template {
-    background-color: #419186;
-    height: 500px;
-    width: 100%;
-    display: flex;
-    // margin-top: 200px;
-    justify-content: space-between;
-}
-
+.first-template { background-color: #62749A; }
+.second-template { background-color: #CF6363; flex-direction: row-reverse; }
+.third-template { background-color: #8968AD; }
+.fourth-template { background-color: #A4BD48; flex-direction: row-reverse; }
+.fifth-template { background-color: #D97543; }
+.sixth-template { background-color: #1887A2; flex-direction: row-reverse; }
+.eight-template { background-color: #419186; }
 
 @keyframes swingRight {
-  0% {
-    transform: rotateY(-90deg);
-    opacity: 0;
-  }
-  100% {
-    transform: rotateY(0);
-    opacity: 1;
-  }
+  0% { transform: rotateY(-90deg); opacity: 0; }
+  100% { transform: rotateY(0); opacity: 1; }
 }
 
 @keyframes swingLeft {
-  0% {
-    transform: rotateY(90deg);  // rotate "in" from the left
-    opacity: 0;
-  }
-  100% {
-    transform: rotateY(0);
-    opacity: 1;
-  }
+  0% { transform: rotateY(90deg); opacity: 0; }
+  100% { transform: rotateY(0); opacity: 1; }
 }
 
 .swing-right {
-  animation: swingRight 0.8s ease-out forwards;
+  animation: swingRight 1s ease-out forwards;
   transform-origin: left center;
 }
 
 .swing-left {
-  animation: swingLeft 0.8s ease-out forwards;
+  animation: swingLeft 1s ease-out forwards;
   transform-origin: right center;
 }
 
-img[appIntersectionObserver] {
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
-}
-
-img {
-  backface-visibility: hidden;
-  z-index: 2;
-}
-
-// swiper-container {
-//       animation: fadeSlideUp 0.6s ease-out;
-//     margin-top: 150px;
-//     text-align: center;
-//     align-items: center;
-//     justify-content: center;
-//   display: flex;
-//   max-width: 50%; // or something reasonable
-//   z-index: 1;
-// }
-
-// .trend-card {
-//   background: #fff;
-//   padding: 12px;
-//   border-radius: 12px;
-//   text-align: center;
-//   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-//   transition: transform 0.3s ease;
-// }
-
-// .trend-card:hover {
-//   transform: translateY(-5px);
-// }
-
-// .card-image {
-//   width: 100%;
-//   height: auto;
-//   border-radius: 8px;
-//   margin-bottom: 8px;
-// }
-
-// .explore-link {
-//   text-decoration: none;
-//   color: #007bff;
-//   font-weight: 500;
-//   margin-top: 6px;
-//   display: inline-block;
-//   cursor: pointer;
-// }
-
-// @keyframes fadeSlideUp {
-//   from {
-//     opacity: 0;
-//     transform: translateY(30px);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
-
 
 .swiper-wrapper-animate {
-    height: 100px;
+  height: 100px;
   animation: fadeSlideUp 1s ease-out;
   width: 50%;
   margin-top: 125px;
- 
-
 }
 
-/* Your card stays same */
 .trend-card {
-  padding: 12px;
+  padding: 20px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-    background: rgba(255, 255, 255, 0.2); /* semi-transparent */
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(200px);
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border-radius: 12px;
-  padding: 20px;
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
 }
 
 .trend-card:hover {
@@ -413,7 +278,6 @@ img {
 
 .card-image {
   width: 100%;
-  height: auto;
   border-radius: 8px;
   margin-bottom: 8px;
 }
@@ -427,7 +291,6 @@ img {
   cursor: pointer;
 }
 
-/* Slide-up keyframe */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -439,17 +302,13 @@ img {
   }
 }
 
-// .shopnow {
-//   margin-top: 425rem;
-//   margin-bottom: 0; 
-//   padding-bottom: 0
-// }
 
 .shopnow {
   position: relative;
-  width: 100%; // or desired width
-  max-width: 100%;
-  margin-top: 450rem;
+  width: 100%;
+  margin-top: 15rem;
+  text-align: center;
+  // margin-top: 12rem;
 }
 
 .shopnow img {
@@ -459,9 +318,9 @@ img {
 
 .shopnow button {
   position: absolute;
-  bottom: 10rem;  // adjust position as needed
-  // right: 20px; 
-  left: 30rem;  // or center it using left: 50%; transform: translateX(-50%);
+  bottom: 10%;
+  left: 30%;
+  transform: translateX(-50%);
   background-color: #000;
   color: #fff;
   border: none;
@@ -475,5 +334,39 @@ img {
 }
 
 .shopnow button:hover {
-  opacity: 1;
+    color: #243340;
+    background-color: #41B0AD;
+}
+
+
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .partition ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .shopnow button {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    bottom: 5%;
+  }
+
+  .trend-card {
+    padding: 12px;
+  }
+
+  .swiper-wrapper-animate {
+    width: 90%;
+  }
 }

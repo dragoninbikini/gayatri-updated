@@ -1,0 +1,26 @@
+
+<div class="cart-btn" (click)="toggleCart()" style="background: none; margin-right: 20px;">
+  <img height="45px" src="./assets/shopping-cart.png" alt="">
+  <div *ngIf="dropdownOpen" class="dropdown drop-up">
+    <div class="cart-item" *ngFor="let item of cartItems">
+      <img height="45px" width="85px" [src]="item.image" alt="item" />
+      <div class="info">
+        <p class="title">{{ item.name }}</p>
+        <p class="price">₹{{ item.price }} × {{ item.quantity }}</p>
+      </div>
+      <button (click)="removeItem(item)" style="background: none; border: none; cursor: pointer;" >🗑️</button>
+    </div>
+    
+    <div class="total">
+      <strong>Total:</strong> ₹{{ getTotal() }}
+      <button (click)="removeAll()" style="background: none; border: none; cursor: pointer;" >Remove all</button>
+    </div>
+    <div class="checkout">
+      <button [routerLink]="['/checkout']"  style="width: 250px; background-color: black; color: white; border-radius: 10px; height: 40px;">Checkout</button>
+    </div>
+  </div>
+  <span *ngIf="cartCount > 0" class="badge">{{ cartCount }}</span>
+</div>
+
+
+

@@ -1,3 +1,3 @@
 <div class="gallery">
-  <img *ngFor="let image of images" [src]="images" alt="Watch Image" style="height: 49rem;"/>
+  <img *ngFor="let image of images" [src]="'http://localhost:5296' + image"  alt="Watch Image" style="height: 49rem;"/>
 </div>

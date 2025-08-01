@@ -38,6 +38,7 @@
     "@omnedia/ngx-marquee": "^3.0.0",
     "@omnedia/ngx-neon-underline": "^3.0.0",
     "@omnedia/ngx-timeline": "^3.0.0",
+    "@omnedia/ngx-typewriter": "^3.1.1",
     "@popperjs/core": "~2.11.8",
     "@tailwindcss/cli": "^4.1.11",
     "@tailwindcss/vite": "^4.1.11",
@@ -47,6 +48,7 @@
     "swiper": "^11.2.10",
     "swiper-src": "github:nolimits4web/swiper",
     "tslib": "^2.3.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {

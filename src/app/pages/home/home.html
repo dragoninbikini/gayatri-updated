@@ -1,11 +1,17 @@
 <app-header></app-header>
 
-<om-aurora>
+
   <div class="content">
     <div class="actions">
-      <button class="login" [routerLink]="['/login']">Login</button>
-      <button class="signup" [routerLink]="['/signup']">Sign-up</button>
-    </div>
+  <ng-container *ngIf="!isLoggedIn; else userIcon">
+    <button class="login" routerLink="/login">Login</button>
+    <button class="signup" routerLink="/signup">Sign-up</button>
+  </ng-container>
+
+  <ng-template #userIcon>
+    <app-user></app-user>
+  </ng-template>
+</div>
     
     <div class="partition">
       <button></button>
@@ -32,7 +38,7 @@
       <h4>// Watches </h4>
     </div>
   
-      <div class="analog" [routerLink]="['/watches']" >
+      <div class="analog" [routerLink]="['/watches']">
         <img width="" height="200px"  src="assets/analog_watch.webp" alt="">
         <div class="text">
           <h1>ANALOG</h1>
@@ -80,4 +86,4 @@
 </div>
 
 
-</om-aurora>
+

@@ -28,11 +28,11 @@
   width: 400px;
   height: 290px;
   border-radius: 20px;
-  background: rgba(200, 200, 200, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(2, 200, 200, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(95, 0, 248, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   transform-origin: bottom left; /* 👈 sets pop-up direction */
   font-family: monospace;
@@ -186,7 +186,8 @@ swiper-container::part(button-next) {
 .trend-card {
   padding: 20px 10px;
   border-radius: 10px;
-  background: #f8f8f8;
+    background-color: rgba(1, 200, 200, 0.2);
+  color: #41B0AD;
   min-height: 100px;
   display: flex;
   flex-direction: column;
@@ -266,6 +267,11 @@ swiper-container::part(button-next) {
   border: none;
   border-radius: 50px;
   font-family: monospace;
+  transition: 0.2s ease-in;
+}
+.context button:hover {
+    color: #243340;
+    background-color: #41B0AD;
 }
 .eyetest-img {
   width: 30%;
@@ -327,4 +333,10 @@ swiper-container::part(button-next) {
   border: none;
   border-radius: 50px;
   font-family: monospace;
+  transition: 0.3s ease-in;
+}
+
+.shopnow .context button:hover {
+    color: #243340;
+    background-color: #41B0AD;
 }

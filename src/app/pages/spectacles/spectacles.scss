@@ -1,16 +1,15 @@
 :host {
   display: block;
-  
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  // height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
   overflow-y: scroll;
-//   background: #1e1e1e;
+  background-color: #243340;
+  color: #41B0AD;
 }
 
   .actions {
@@ -165,17 +164,16 @@ html, body {
   transform: translateX(-50%);
   width: 70%;
   text-align: center;
-   margin-top: 80px; //← Not needed with absolute top 
+   margin-top: 80px; 
    
 }
 
 .partition button {
-  background-color: black;
-  color: white;
+  color: #41B0AD;
   width: 100%;
-  height: 2px;          /* Thin button */
+  height: 2px;         
   font-size: 14px;
-  padding: 0 1rem;       /* Horizontal padding only */
+  padding: 0 1rem;       
   border: none;
   border-radius: 200px;
   transition: 0.3s ease-in;
@@ -184,7 +182,7 @@ html, body {
 .partition ul {
   display: flex;
   justify-content: center;
-  gap: 2rem; /* space between links */
+  gap: 2rem; 
   list-style: none;
   padding: 0;
   margin-top: 1rem;
@@ -193,7 +191,7 @@ html, body {
 
 .partition ul li a {
   text-decoration: none;
-  color: #1e1e1e;
+  color: #41B0AD;
   font-weight: 500;
   transition: color 0.3s ease;
 }

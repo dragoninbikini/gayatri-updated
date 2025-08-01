@@ -1,0 +1,69 @@
+<h2>Manage Products</h2>
+
+<form [formGroup]="productForm" (ngSubmit)="submitForm()">
+  <input formControlName="name" placeholder="Name" />
+  
+  <select formControlName="gender">
+  <option value="">Select Gender</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Unisex">Unisex</option>
+</select>
+
+
+<input formControlName="brand" placeholder="Brand" />
+ 
+
+  <select formControlName="type">
+    <option value="">Select Type</option>
+    <option value="Watch">Watch</option>
+    <option value="Spectacle">Spectacle</option>
+  </select>
+
+
+<select
+  formControlName="watchType"
+  *ngIf="productForm.get('type')?.value === 'Watch'"
+  (change)="onWatchTypeChange($event)">
+  <option value="All">All</option>
+  <option value="Premium">Premium</option>
+  <option value="Smart">Smart</option>
+  <option value="Analog">Analog</option>
+  <option value="Sports">Sports</option>
+</select>
+
+
+  <select formControlName="spectacleType" *ngIf="productForm.get('type')?.value === 'Spectacle'">
+    <option value="">Select Spectacle Type</option>
+    <option value="Reading">Reading</option>
+    <option value="Computer">Computer</option>
+    <option value="Sunglasses">Sunglasses</option>
+    <option value="Prescription">Prescription</option>
+  </select>
+  <input formControlName="price" type="number" placeholder="Price" />
+  <input formControlName="description" placeholder="Description" />
+  <input type="file" (change)="onImageSelected($event)" accept="image/*"/>
+  
+  
+  
+  <button type="submit" [disabled]="productForm.invalid">{{ editingProduct ? 'Update' : 'Add' }} Product</button>
+  <button type="button" (click)="cancelEdit()" *ngIf="editingProduct">Cancel</button>
+</form>
+
+<hr />
+
+<ul>
+  <li *ngFor="let p of products">
+     <img [src]="'http://localhost:5296' + p.images[0]" width="100" *ngIf="p.images?.length">
+    <strong>{{ p.name }}</strong> ({{ p.type }}) - ₹{{ p.price }}<br />
+    <span *ngIf="p.type === 'Watch'">Type: {{ p.watchType }}</span>
+    <span *ngIf="p.type === 'Spectacle'">Type: {{ p.spectacleType }}</span>
+    <br />
+    <button (click)="editProduct(p)">Edit</button>
+    <button (click)="deleteProduct(p.id)">Delete</button>
+  </li>
+</ul>
+
+<hr />
+<button (click)="logout()">Logout</button>
+

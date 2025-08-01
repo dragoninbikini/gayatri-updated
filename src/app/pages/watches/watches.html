@@ -1,12 +1,18 @@
 <app-header></app-header>
 <script></script>
 
-<om-aurora>
+
   <div class="content">
-    <div class="actions">
-      <button class="login" [routerLink]="['/login']">Login</button>
-      <button class="signup" [routerLink]="['/signup']">Sign-up</button>
-    </div>
+<div class="actions">
+  <ng-container *ngIf="!isLoggedIn(); else userIcon">
+    <button class="login" routerLink="/login">Login</button>
+    <button class="signup" routerLink="/signup">Sign-up</button>
+  </ng-container>
+
+  <ng-template #userIcon>
+    <app-user></app-user>
+  </ng-template>
+</div>
 
     <div class="partition">
       <button></button>
@@ -17,9 +23,7 @@
         <li><a [routerLink]="['/about']">About</a></li>
       </ul>
     </div>
-    <!-- <app-watch-carousel
-      style="margin-top: 425rem; margin-bottom: 0; padding-bottom: 0"
-    ></app-watch-carousel> -->
+
     <div class="shopnow">
       <img src="assets/watchbanner.jpeg" alt="">
       <button [routerLink]="['/watches/shop']">Shop Now</button>
@@ -41,13 +45,9 @@
           loop="true"
           space-between="20"
         >
-          <swiper-slide *ngFor="let item of items">
+          <swiper-slide *ngFor="let item of premiumWatches">
             <div class="trend-card">
-              <img
-                [src]="item.image"
-                alt="{{ item.name }}"
-                class="card-image"
-              />
+<img [src]="item.images[0]" alt="{{ item.name }}" class="card-image" />
               <h3>{{ item.name }}</h3>
               <a class="explore-link" [routerLink]="['/watches', item.id]">Explore</a>
             </div>
@@ -55,7 +55,7 @@
         </swiper-container>
         </div>
       </div>
-      <div class="firstContext"><h1>-------------------Featured------------------</h1></div>
+      <div class="firstContext"><h1>-------------------Analog Watches------------------</h1></div>
       <div class="second-template">
         <img
           appIntersectionObserver="left"
@@ -71,13 +71,9 @@
           loop="true"
           space-between="20"
         >
-          <swiper-slide *ngFor="let item of items">
+          <swiper-slide *ngFor="let item of analogWatches">
             <div class="trend-card">
-              <img
-                [src]="item.image"
-                alt="{{ item.name }}"
-                class="card-image"
-              />
+              <img [src]="item.images[0]" alt="{{ item.name }}" class="card-image" />
               <h3>{{ item.name }}</h3>
               <a class="explore-link" [routerLink]="['/watches', item.id]">Explore</a>
             </div>
@@ -85,7 +81,7 @@
         </swiper-container>
         </div>
       </div>
-      <div class="firstContext"><h1>-------------------On Sale------------------</h1></div>
+      <div class="firstContext"><h1>-------------------Smart Watches------------------</h1></div>
       <div class="third-template">
         <img
           appIntersectionObserver="right"
@@ -101,13 +97,9 @@
           loop="true"
           space-between="20"
         >
-          <swiper-slide *ngFor="let item of items">
+          <swiper-slide *ngFor="let item of smartWatches">
             <div class="trend-card">
-              <img
-                [src]="item.image"
-                alt="{{ item.name }}"
-                class="card-image"
-              />
+<img [src]="item.images[0]" alt="{{ item.name }}" class="card-image" />
               <h3>{{ item.name }}</h3>
               <a class="explore-link" [routerLink]="['/watches', item.id]">Explore</a>
             </div>
@@ -115,7 +107,7 @@
         </swiper-container>
         </div>
       </div>
-      <div class="firstContext"><h1>-------------------Clearance------------------</h1></div>
+      <div class="firstContext"><h1>-------------------Sports Watches------------------</h1></div>
       <div class="fourth-template">
         <img
           appIntersectionObserver="left"
@@ -131,13 +123,9 @@
           loop="true"
           space-between="20"
         >
-          <swiper-slide *ngFor="let item of items">
+          <swiper-slide *ngFor="let item of sportsWatches">
             <div class="trend-card">
-              <img
-                [src]="item.image"
-                alt="{{ item.name }}"
-                class="card-image"
-              />
+<img [src]="item.images[0]" alt="{{ item.name }}" class="card-image" />
               <h3>{{ item.name }}</h3>
               <a class="explore-link" [routerLink]="['/watches', item.id]">Explore</a>
             </div>
@@ -145,68 +133,8 @@
         </swiper-container>
         </div>
       </div>
-      <div class="firstContext"><h1>-------------------Pocket-Friendly Collection------------------</h1></div>
-      <div class="fifth-template">
-        <img
-          appIntersectionObserver="right"
-          height="500px"
-          src="assets/fifthwatch.jpg"
-          alt=""
-        />
-        <div class="swiper-wrapper-animate" >
-        <swiper-container
-          class="trend-carousel"
-          slides-per-view="4"
-          navigation="true"
-          loop="true"
-          space-between="20"
-        >
-          <swiper-slide *ngFor="let item of items">
-            <div class="trend-card">
-              <img
-                [src]="item.image"
-                alt="{{ item.name }}"
-                class="card-image"
-              />
-              <h3>{{ item.name }}</h3>
-              <a class="explore-link" [routerLink]="['/watches', item.id]">Explore</a>
-            </div>
-          </swiper-slide>
-        </swiper-container>
-        </div>
-      </div>
-      <div class="firstContext"><h1>-------------------Titan Collection------------------</h1></div>
-      <div class="sixth-template">
-        <img
-          appIntersectionObserver="left"
-          height="500px"
-          src="assets/sixthwatch.jpg"
-          alt=""
-        />
-        <div class="swiper-wrapper-animate" >
-        <swiper-container
-          class="animate-up"
-          class="trend-carousel"
-          slides-per-view="4"
-          navigation="true"
-          loop="true"
-          space-between="20"
-        >
-          <swiper-slide *ngFor="let item of items">
-            <div class="trend-card">
-              <img
-                [src]="item.image"
-                alt="{{ item.name }}"
-                class="card-image"
-              />
-              <h3>{{ item.name }}</h3>
-              <a class="explore-link" [routerLink]="['/watches', item.id]">Explore</a>
-            </div>
-          </swiper-slide>
-        </swiper-container>
-        </div>
-      </div>
-      <div class="firstContext"><h1>-------------------All Collection------------------</h1></div>
+
+      <div class="firstContext"><h1>-------------------All Watches------------------</h1></div>
       <div class="eight-template">
         <img
           appIntersectionObserver="right"
@@ -222,13 +150,9 @@
           loop="true"
           space-between="20"
         >
-          <swiper-slide *ngFor="let item of items">
+          <swiper-slide *ngFor="let item of allWatches">
             <div class="trend-card">
-              <img
-                [src]="item.image"
-                alt="{{ item.name }}"
-                class="card-image"
-              />
+<img [src]="item.images[0]" alt="{{ item.name }}" class="card-image" />
               <h3>{{ item.name }}</h3>
               <a class="explore-link" [routerLink]="['/watches', item.id]">Explore</a>
             </div>
@@ -238,4 +162,4 @@
       </div>
     </div>
   </div>
-</om-aurora>
+
